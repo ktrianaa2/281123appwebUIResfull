@@ -43,7 +43,8 @@ public class ListadeBancos extends AppCompatActivity implements Asynchtask {
         JSONArray JSONlista = new JSONArray(result);
         for(int i=0; i< JSONlista.length();i++){
             JSONObject banco= JSONlista.getJSONObject(i);
-            lstBancos = lstBancos + "\n" + banco.getString("name").toString();
+            lstBancos = lstBancos + "\n" + banco.getString("code") + "-" +
+                    banco.getString("name").toString();
         }
         txtResp.setText("Respuesta WS Lista de Bancos" + lstBancos);
     }
